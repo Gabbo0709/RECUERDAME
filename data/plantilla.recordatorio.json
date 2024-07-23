@@ -1,0 +1,8 @@
+{
+    "nombre": "a",
+    "fecha": "dd/MM/YYYY",
+    "hora": "HH:mm",
+    "descripcion": "nota",
+    "tipo": 2,
+    "prioridad": 1
+}

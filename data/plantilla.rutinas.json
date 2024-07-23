@@ -1,0 +1,27 @@
+{
+    "id": "abc",
+    "nombre": "abc",
+    "categoria": "medicamentos",
+    "fecha_inicio": "dd/MM/YYYY",
+    "fecha_fin": "dd/MM/YYYY",
+    "estado": 1,
+    "nota": "texto",
+    "recordatorios": [
+    {
+        "nombre": "abc",
+        "fecha": "dd/MM/YYYY",
+        "hora": "HH:mm",
+        "prioridad": 3,
+        "tipo": 1,
+        "repeticion": [3, "horas"]
+    },
+    {
+        "nombre": "abc",
+        "fecha": "dd/MM/YYYY",
+        "hora": "HH:mm",
+        "prioridad": 3,
+        "tipo": 1,
+        "repeticion": [3, "horas"]
+    }
+    ]
+}

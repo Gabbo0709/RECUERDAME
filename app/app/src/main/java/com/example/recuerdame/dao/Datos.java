@@ -2,18 +2,17 @@ package com.example.recuerdame.dao;
 
 import com.example.recuerdame.interfaces.IDatos;
 import com.example.recuerdame.modelos.Rutina;
-import com.example.recuerdame.modelos.Recordatorio;
 import com.example.recuerdame.modelos.ObjetoBase;
 import com.example.recuerdame.utilidades.Archivos;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import java.lang.reflect.Type;
+import java.util.Locale;
 import java.util.Objects;
 
 import android.content.Context;
@@ -31,8 +30,8 @@ public class Datos <T extends ObjetoBase> implements IDatos<T> {
         this.contenidoArchivoActual = archivos.leerArchivo();
         this.tipoArray = tipoArray;
 
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        DateFormat timeFormat = new SimpleDateFormat("HH:mm");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        DateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(Date.class, new com.google.gson.JsonDeserializer<Date>() {
            public Date deserialize(com.google.gson.JsonElement json, Type typeOff, com.google.gson.JsonDeserializationContext cntxt) {

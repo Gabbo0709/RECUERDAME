@@ -2,12 +2,9 @@ package com.example.recuerdame.modelos;
 
 import java.util.Date;
 
-public class Recordatorio {
-    private String id;
-    private String nombre;
+public class Recordatorio extends ObjetoBase {
     private Date fecha;
     private Date hora;
-    private String descripcion;
     private int tipo; // 1. Un solo uso. 2. Parte de una rutina.
     private int prioridad;
     private Integer intervaloReestablecimiento;
@@ -50,12 +47,6 @@ public class Recordatorio {
     //#endregion
 
     //#region Getters y Setters
-    public String getId() {
-        return this.id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
     public String getNombre() {
         return this.nombre;
     }

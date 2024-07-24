@@ -4,14 +4,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.Date;
 
-public class Rutina {
-    private String id;
-    private String nombre;
+public class Rutina extends ObjetoBase {
     private String categoria;
     private Date fechaInicio;
     private Date fechaFin;
     private boolean estado;
-    private String descripcion;
     private List<Recordatorio> recordatorios;
 
     //#region Constructores
@@ -27,12 +24,6 @@ public class Rutina {
     }
     //#endregion
     //#region Getters y Setters
-    public String getId() {
-        return this.id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
     public String getNombre() {
         return this.nombre;
     }
@@ -80,22 +71,18 @@ public class Rutina {
     //#region Métodos
 
     public String generarId() {
-        StringBuilder nuevaId = new StringBuilder();
         Random random = new Random();
-        nuevaId.append("r");
-        nuevaId.append(this.categoria.substring(0, 3).toUpperCase());
-        nuevaId.append(this.nombre.substring(0, 3).toUpperCase());
-        nuevaId.append(random.nextInt(100));
-        return nuevaId.toString();
+        return "r" +
+                this.categoria.substring(0, 3).toUpperCase() +
+                this.nombre.substring(0, 3).toUpperCase() +
+                random.nextInt(100);
     }
     
     public String generarIdRecordatorio(Recordatorio recordatorio) {
-        StringBuilder nuevaId = new StringBuilder();
-        nuevaId.append(this.id);
-        nuevaId.append("-");
-        nuevaId.append(recordatorio.getNombre().substring(0, 3).toUpperCase());
-        nuevaId.append(recordatorio.getPrioridad());
-        return nuevaId.toString();
+        return this.id +
+                "-" +
+                recordatorio.getNombre().substring(0, 3).toUpperCase() +
+                recordatorio.getPrioridad();
     }
 
     public void agregarRecordatorio(Recordatorio recordatorio) {

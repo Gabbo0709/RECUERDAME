@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RECUERDAME</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_recordatorios">Recordatorio</string>
+    <string name="title_recompensas">Recompensas</string>
+    <string name="title_rutina">Rutina</string>
+
 </resources>

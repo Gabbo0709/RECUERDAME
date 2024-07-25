@@ -12,6 +12,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.recuerdame.transmision.RecibidorAlarma
 import com.example.recuerdame.modelos.Recordatorio
+import com.example.recuerdame.modelos.Rutina
 import java.time.Instant
 import java.time.ZoneId
 import java.util.*
@@ -67,4 +68,11 @@ object Alarmas {
         val diferencia = fechaYHoraRecordatorio.timeInMillis - fechaActual.timeInMillis
         return diferencia
     }
+
+    fun desactivarRutina(context: Context, rutina: Rutina) {
+        for(recordatorio in rutina.recordatorios) {
+            cancelarAlarma(context, recordatorio)
+        }
+    }
+
 }

@@ -57,4 +57,7 @@ dependencies {
 
     // Dependencia DataStore para almacenamiento de datos de usuario
     implementation(libs.datastore.preferences)
+
+    // Dependencia para adaptador de corrutinas
+    implementation(libs.kotlinx.corountines.android)
 }

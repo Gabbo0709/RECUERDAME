@@ -9,7 +9,7 @@ import com.example.recuerdame.enumerables.UnidadesDeTiempo;
 import com.example.recuerdame.utilidades.Tiempo;
 
 public class Rutina extends ObjetoBase {
-    private String categoria;
+    private String categoria; // 1. Medicamentos 2. Alimentación 3. Tareas 4. Ejercicios 5. Personalizado
     private Date fechaInicio;
     private Date fechaFin;
     private Integer estado; // 1. Activa. 2. Pausada. 3. Desactivada. (Se puede considerar desactivada al finalizarse).

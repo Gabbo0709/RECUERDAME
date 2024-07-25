@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FF0000"/> <!-- Cambia el color según tus necesidades -->
+    <size android:width="48dp" android:height="48dp"/> <!-- Tamaño del cuadrado -->
+    <stroke android:width="2dp" android:color="#000000"/> <!-- Borde del cuadrado -->
+</shape>

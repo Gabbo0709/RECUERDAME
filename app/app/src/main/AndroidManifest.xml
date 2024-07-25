@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".ui.rutina.RutinaActividad"
             android:exported="true"
-            android:label="@string/title_rutina">
+            android:label="@string/title_crearrutina">
 
         </activity>
     </application>

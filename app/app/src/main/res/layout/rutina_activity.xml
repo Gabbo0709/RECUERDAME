@@ -1,15 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- TextView para mostrar un mensaje -->
+
+
+    <!-- EditText para entrada de texto con fondo personalizado -->
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de la rutina"
+        android:padding="15dp"
+        android:background="@drawable/edit_text_background"
+        tools:ignore="Autofill,TextFields" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is the new activity"
-        android:textSize="18sp" />
+        android:layout_marginTop="50dp"
+        android:text="Duración"
+        android:textSize="20sp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/icon1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_background"
+            android:src="@drawable/icon2"
+            android:padding="8dp"
+            android:contentDescription="Icon 1" />
+
+        <ImageButton
+            android:id="@+id/icon2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_background"
+            android:src="@drawable/icon2"
+            android:padding="8dp"
+            android:contentDescription="Icon 2" />
+
+        <ImageButton
+            android:id="@+id/icon3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_background"
+            android:src="@drawable/icon2"
+            android:padding="8dp"
+            android:contentDescription="Icon 3" />
+
+        <ImageButton
+            android:id="@+id/icon4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_background"
+            android:src="@drawable/icon2"
+            android:padding="8dp"
+            android:contentDescription="Icon 4" />
+
+        <ImageButton
+            android:id="@+id/icon5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_background"
+            android:src="@drawable/icon2"
+            android:padding="8dp"
+            android:contentDescription="Icon 5" />
+
+        <ImageButton
+            android:id="@+id/icon6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_background"
+            android:src="@drawable/icon2"
+            android:padding="8dp"
+            android:contentDescription="Icon 6" />
+
+        <ImageButton
+            android:id="@+id/icon7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rect_background"
+            android:src="@drawable/icon2"
+            android:padding="8dp"
+            android:contentDescription="Icon 7" />
+    </LinearLayout>
 </LinearLayout>

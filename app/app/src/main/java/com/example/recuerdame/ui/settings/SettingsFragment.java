@@ -1,5 +1,6 @@
 package com.example.recuerdame.ui.settings;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,7 +17,9 @@ import com.example.recuerdame.R;
 
 public class SettingsFragment extends Fragment {
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch switchDarkMode;
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch switchContrastMode;
     private Button buttonAdjustFontSize;
     private EditText edittextChangeName;

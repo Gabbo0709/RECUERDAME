@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.recuerdame.R;
 
+//Para crear una rutina
 public class RutinaActividad extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

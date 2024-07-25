@@ -30,77 +30,68 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
-        android:gravity="center_horizontal">
+        android:padding="16dp">
 
-        <ImageButton
-            android:id="@+id/icon1"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rect_background"
-            android:src="@drawable/icon2"
-            android:padding="8dp"
-            android:contentDescription="Icon 1" />
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:hint="Inicio dd/MM/yyyy"
+            android:maxLength="10"
+            android:padding="15dp"
+            android:background="@drawable/edit_text_background"
+            tools:ignore="Autofill,TextFields" />
 
-        <ImageButton
-            android:id="@+id/icon2"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rect_background"
-            android:src="@drawable/icon2"
-            android:padding="8dp"
-            android:contentDescription="Icon 2" />
-
-        <ImageButton
-            android:id="@+id/icon3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rect_background"
-            android:src="@drawable/icon2"
-            android:padding="8dp"
-            android:contentDescription="Icon 3" />
-
-        <ImageButton
-            android:id="@+id/icon4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rect_background"
-            android:src="@drawable/icon2"
-            android:padding="8dp"
-            android:contentDescription="Icon 4" />
-
-        <ImageButton
-            android:id="@+id/icon5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rect_background"
-            android:src="@drawable/icon2"
-            android:padding="8dp"
-            android:contentDescription="Icon 5" />
-
-        <ImageButton
-            android:id="@+id/icon6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rect_background"
-            android:src="@drawable/icon2"
-            android:padding="8dp"
-            android:contentDescription="Icon 6" />
-
-        <ImageButton
-            android:id="@+id/icon7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rect_background"
-            android:src="@drawable/icon2"
-            android:padding="8dp"
-            android:contentDescription="Icon 7" />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Periodo"
+            android:maxLength="10"
+            android:padding="15dp"
+            android:background="@drawable/edit_text_background"
+            tools:ignore="Autofill,TextFields" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <EditText
+        android:id="@+id/editText2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:inputType="number"
+        android:layout_marginTop="10dp"
+        android:hint="Cantidad"
+        android:maxLength="2"
+        android:padding="15dp"
+        android:background="@drawable/edit_text_background"
+        tools:ignore="Autofill,TextFields" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Final dd/MM/yyyy"
+
+            android:maxLength="10"
+            android:padding="15dp"
+            android:background="@drawable/edit_text_background"
+            tools:ignore="Autofill,TextFields" />
+
+
+    </LinearLayout>
+
+
+
 </LinearLayout>

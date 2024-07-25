@@ -32,4 +32,10 @@
         <item>Change Name</item>
         <item>Change Date</item>
     </string-array>
+
+    <string-array name="options_array">
+        <item>Optician 1</item>
+        <item>Optician 2</item>
+        <item>Optician 3</item>
+    </string-array>
 </resources>

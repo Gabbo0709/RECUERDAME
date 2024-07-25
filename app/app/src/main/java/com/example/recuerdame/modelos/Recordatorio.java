@@ -1,6 +1,11 @@
 package com.example.recuerdame.modelos;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+
+import com.example.recuerdame.utilidades.Tiempo;
+import com.example.recuerdame.enumerables.UnidadesDeTiempo;
 
 public class Recordatorio extends ObjetoBase {
     private Date fecha;
@@ -94,6 +99,43 @@ public class Recordatorio extends ObjetoBase {
     }
     public void setUnidadTiempo(String unidadTiempo) {
         this.unidadTiempo = unidadTiempo;
+    }
+    //#endregion
+
+    //#region Métodos
+    public void reestablecer() {
+        UnidadesDeTiempo unidad = Enum.valueOf(UnidadesDeTiempo.class, this.unidadTiempo);
+        switch (unidad) {
+            case MINUTOS:
+                this.fecha = Tiempo.addMinutos(this.fecha, this.intervaloReestablecimiento);
+                this.hora = Tiempo.addMinutos(this.hora, this.intervaloReestablecimiento);
+                break;
+            case HORAS:
+                this.fecha = Tiempo.addHoras(this.fecha, this.intervaloReestablecimiento);
+                this.hora = Tiempo.addHoras(this.hora, this.intervaloReestablecimiento);
+                break;
+            case DIAS:
+                this.fecha = Tiempo.addDias(this.fecha, this.intervaloReestablecimiento);
+                break;
+            case SEMANAS:
+                this.fecha = Tiempo.addSemanas(this.fecha, this.intervaloReestablecimiento);
+                break;
+            case MESES:
+                this.fecha = Tiempo.addMeses(this.fecha, this.intervaloReestablecimiento);
+                break;
+            case ANIOS:
+                this.fecha = Tiempo.addAnios(this.fecha, this.intervaloReestablecimiento);
+                break;
+        }
+        // Dar formato a this.fecha como "dd/MM/yyyy" y a this.hora como "HH:mm"
+        String fechaFormateada = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(this.fecha);
+        String horaFormateada = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(this.hora);
+        try {
+            this.fecha = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(fechaFormateada);
+            this.hora = new SimpleDateFormat("HH:mm", Locale.getDefault()).parse(horaFormateada);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     //#endregion
 }

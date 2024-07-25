@@ -14,6 +14,7 @@ public class Recordatorio extends ObjetoBase {
     private int prioridad;
     private Integer intervaloReestablecimiento;
     private String unidadTiempo;
+    private boolean estado;
 
     //#region Constructores
     public Recordatorio(String id, String nombre, Date fecha, Date hora, String descripcion, int tipo, int prioridad, Integer intervaloReestablecimiento, String unidadTiempo) {
@@ -26,6 +27,7 @@ public class Recordatorio extends ObjetoBase {
         this.prioridad = prioridad;
         this.intervaloReestablecimiento = intervaloReestablecimiento;
         this.unidadTiempo = unidadTiempo;
+        this.estado = true;
     }
 
     public Recordatorio (String nombre, Date fecha, Date hora, String descripcion, int tipo, int prioridad, Integer intervaloReestablecimiento, String unidadTiempo) {
@@ -37,6 +39,7 @@ public class Recordatorio extends ObjetoBase {
         this.prioridad = prioridad;
         this.intervaloReestablecimiento = intervaloReestablecimiento;
         this.unidadTiempo = unidadTiempo;
+        this.estado = true;
     }
 
     public Recordatorio(String nombre, Date fecha, Date hora, String descripcion, int tipo, int prioridad) {
@@ -48,6 +51,7 @@ public class Recordatorio extends ObjetoBase {
         this.prioridad = prioridad;
         this.intervaloReestablecimiento = null;
         this.unidadTiempo = null;
+        this.estado = true;
     }
     //#endregion
 
@@ -99,6 +103,12 @@ public class Recordatorio extends ObjetoBase {
     }
     public void setUnidadTiempo(String unidadTiempo) {
         this.unidadTiempo = unidadTiempo;
+    }
+    public boolean getEstado() {
+        return this.estado;
+    }
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
     //#endregion
 

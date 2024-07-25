@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -27,6 +28,7 @@
             android:label="@string/title_crearrutina">
 
         </activity>
+        <receiver android:name=".transmision.RecibidorAlarma" android:exported="false" />
     </application>
 
 </manifest>

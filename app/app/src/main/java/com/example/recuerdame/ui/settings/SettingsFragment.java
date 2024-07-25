@@ -1,5 +1,6 @@
 package com.example.recuerdame.ui.settings;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -18,6 +20,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import kotlinx.coroutines.scheduling.Task;
 
 public class SettingsFragment extends Fragment {
 
@@ -31,10 +35,12 @@ public class SettingsFragment extends Fragment {
     private DatosUsuario datosUsuario;
     private Usuario usuario;
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_settings, container, false);
+
 
         // Inicializar los elementos de la vista
         switchDarkMode = root.findViewById(R.id.switchDarkMode);
@@ -48,18 +54,21 @@ public class SettingsFragment extends Fragment {
         usuario = datosUsuario.leerUsuario();
 
         cargarConfiguracion();
-
-        // Asignar listeners a los elementos
-        switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
-
+        switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) ->{
+            Toast.makeText(getContext(), "Modo oscuro en proximas versiones", Toast.LENGTH_SHORT).show();
+          /*
+            if(isChecked){
+              AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+          }else{
+              AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+          }*/
         });
-
         switchContrastMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
-
+            Toast.makeText(getContext(), "Modo alto contraste en proximas versiones", Toast.LENGTH_SHORT).show();
         });
 
         buttonAdjustFontSize.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Ajustar tamaño de letra", Toast.LENGTH_SHORT).show()
+                Toast.makeText(getContext(), "Ajustar tamaño de letra en proximas versiones", Toast.LENGTH_SHORT).show()
         );
 
         buttonSavedChanges.setOnClickListener(v -> guardarCambios());

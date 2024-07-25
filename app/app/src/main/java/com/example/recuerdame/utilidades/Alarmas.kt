@@ -11,11 +11,7 @@ import java.util.*
 
 object Alarmas {
     fun crearAlarma(context: Context, recordatorio: Recordatorio) {
-        val alarmManager = getSystemService(context, RecibidorAlarma::class.java)
-        if (alarmManager != null) {
-            val intent = Intent(context, RecibidorAlarma::class.java).apply {
-                putExtra("recordatorioID", recordatorio.id)
-            }
-        }
+        val manejadorAlarmas = getSystemService(context, AlarmManager::class.java) as AlarmManager
+
     }
 }

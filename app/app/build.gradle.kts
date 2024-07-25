@@ -64,4 +64,8 @@ dependencies {
 
     // Dependencia para el lifecycle de los modelos de vistas
     implementation(libs.lifecycle.viewmodel.android)
+
+    // Dependencia para uso de CardView
+    implementation(libs.cardview)
+
 }

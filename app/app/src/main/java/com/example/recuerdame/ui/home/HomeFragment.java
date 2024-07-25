@@ -1,5 +1,6 @@
 package com.example.recuerdame.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.recuerdame.databinding.FragmentHomeBinding;
+import com.example.recuerdame.ui.rutina.RutinaActividad;
 
 public class HomeFragment extends Fragment {
 
@@ -26,6 +28,15 @@ public class HomeFragment extends Fragment {
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        binding.button1.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), RutinaActividad.class);
+            startActivity(intent);
+        });
+
+        binding.button2.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), RutinaActividad.class);
+            startActivity(intent);
+        });
         return root;
     }
 

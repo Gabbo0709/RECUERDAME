@@ -19,4 +19,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboard.DashboardFragment">
+
+        <!-- Otros componentes del fragmento -->
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rededondeado"
+            android:text="@string/title_crearrutina"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:text="@string/title_crearrecordatorios"
+            android:background="@drawable/rededondeado"
+            android:layout_below="@id/button1"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

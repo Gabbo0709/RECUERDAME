@@ -10,4 +10,26 @@
     <string name="title_medicamentos">Medicamentos</string>
 
 
+    <string name="accessibility_options">Opciones de accesivilidad\n</string>
+    <string name="title_configuracion">Configuracion</string>
+    <string name="title_settings">Configutación\n</string>
+    <!--Bottums y Switcher de Sttings-->
+
+    <string name="dark_mode">Dark Mode</string>
+    <string name="contrast_mode">High Contrast Mode</string>
+    <string name="adjust_font_size">Adjust Font Size</string>
+    <string name="change_name">Change Name</string>
+    <string name="change_date">Change Date</string>
+
+    <!--Se crean los arreglos para los spinner -->
+    <string-array name="accessibility_options">
+        <item>Dark Mode</item>
+        <item>High Contrast Mode</item>
+        <item>Adjust Font Size</item>
+    </string-array>
+
+    <string-array name="user_configuration_options">
+        <item>Change Name</item>
+        <item>Change Date</item>
+    </string-array>
 </resources>

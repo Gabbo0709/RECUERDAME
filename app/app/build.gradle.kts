@@ -60,4 +60,7 @@ dependencies {
 
     // Dependencia para adaptador de corrutinas
     implementation(libs.kotlinx.corountines.android)
+
+    // Dependencia para el lifecycle de los modelos de vistas
+    implementation(libs.lifecycle.viewmodel.android)
 }

@@ -27,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding = true
@@ -59,7 +59,8 @@ dependencies {
     implementation(libs.datastore.preferences)
 
     // Dependencia para adaptador de corrutinas
-    implementation(libs.kotlinx.corountines.android)
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-android
+    implementation(libs.kotlinx.coroutines.android)
 
     // Dependencia para el lifecycle de los modelos de vistas
     implementation(libs.lifecycle.viewmodel.android)

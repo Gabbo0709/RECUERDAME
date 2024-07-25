@@ -20,6 +20,8 @@
     <string name="adjust_font_size">Adjust Font Size</string>
     <string name="change_name">Change Name</string>
     <string name="change_date">Change Date</string>
+    <string name="nombre_del_recordatorio">Nombre del recordatorio</string>
+    <string name="recordatorio">Recordatorio</string>
 
     <!--Se crean los arreglos para los spinner -->
     <string-array name="accessibility_options">

@@ -1,4 +1,4 @@
-package com.example.recuerdame.ui.rutina;
+package com.example.recuerdame.ui.notifications;
 
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -15,8 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.recuerdame.R;
 
-// Para crear una rutina
-public class RutinaActividad extends AppCompatActivity {
+// Para crear una recordatorio
+public class RecordatorioActividad extends AppCompatActivity {
 
     private ViewGroup container; // Define container aquí
     private int subformCount = 0; // Define subformCount aquí
@@ -24,7 +24,7 @@ public class RutinaActividad extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rutina_activity);  // Cargar el layout de la nueva actividad
+        setContentView(R.layout.recordatorio_actividad);  // Cargar el layout de la nueva actividad
 
         // Vincular el EditText del layout
         EditText editTextNumeric = findViewById(R.id.editText2);
@@ -109,6 +109,3 @@ public class RutinaActividad extends AppCompatActivity {
         }
     }
 }
-
-
-

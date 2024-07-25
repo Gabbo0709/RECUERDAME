@@ -17,6 +17,7 @@ public class RepositorioRutina {
                 Alarmas.INSTANCE.crearAlarma(context, recordatorio);
             }
         }
+        return false;
     }
 
     public static boolean modificar(Rutina rutina, Context context) {

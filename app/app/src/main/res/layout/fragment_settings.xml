@@ -6,17 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".ui.settings.SettingsFragment">
 
-    <TextView
-        android:id="@+id/textConfinguracion"
-        android:layout_width="match_parent"
+    <Switch
+        android:id="@+id/switchDarkMode"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Modo oscuro"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_margin="16dp" />
+
+    <Switch
+        android:id="@+id/switchContrastMode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Modo alto contraste"
+        app:layout_constraintTop_toBottomOf="@+id/switchDarkMode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_margin="16dp" />
+
+    <Button
+        android:id="@+id/buttonAdjustFontSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ajustar tamaño de letra"
+        app:layout_constraintTop_toBottomOf="@+id/switchContrastMode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_margin="16dp" />
+
+    <EditText
+        android:id="@+id/edittextChangeDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cambiar Fecha Nacimiento"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdjustFontSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_margin="16dp" />
+
+    <EditText
+        android:id="@+id/edittextChangeName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cambiar Nombre de Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/edittextChangeDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_margin="16dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Configuración"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/switchDarkMode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

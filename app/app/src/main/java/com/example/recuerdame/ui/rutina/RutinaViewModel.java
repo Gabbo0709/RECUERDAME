@@ -8,7 +8,7 @@ public class RutinaViewModel extends ViewModel{
 
     public RutinaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is rutina fragment");
+
     }
 
 

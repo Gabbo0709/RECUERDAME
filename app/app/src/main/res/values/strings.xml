@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">RECUERDAME</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Hogar</string>
     <string name="title_recordatorios">Recordatorio</string>
     <string name="title_recompensas">Recompensas</string>
-    <string name="title_rutina">Rutina</string>
+    <string name="title_rutina">Mis Rutinas</string>
+
+    <string name="title_crearrecordatorios">Crear Recordatorio</string>
+    <string name="title_crearrutina">Crear Rutina</string>
+    <string name="title_medicamentos">Medicamentos</string>
+
 
 </resources>

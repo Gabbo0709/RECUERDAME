@@ -56,4 +56,12 @@ public class DatosUsuario {
     public void guardarTamanoFuente(int tamanoFuente) {
         preferencias.guardarTamanoFuenteDesdeJava(tamanoFuente);
     }
+
+    public void guardarPrimeraVez(Boolean primeraVez) {
+        preferencias.guardarPrimeraVezDesdeJava(primeraVez);
+    }
+
+    public Boolean obtenerPrimeraVez() {
+        return preferencias.obtenerPrimeraVezDesdeJava();
+    }
 }

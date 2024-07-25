@@ -19,8 +19,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 
 class Preferencias (private val context: Context) {
-    private val PREFERENCIAS_USUARIO = "settings"
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = PREFERENCIAS_USUARIO)
+    private val preferencias = "settings"
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = preferencias)
 
     // Definir las claves de las preferencias
     companion object {
@@ -29,12 +29,13 @@ class Preferencias (private val context: Context) {
         val ALTO_CONTRASTE = stringPreferencesKey("alto_contraste")
         val MODO_OSCURO = stringPreferencesKey("modo_oscuro")
         val TAMANO_FUENTE = stringPreferencesKey("tamano_fuente")
+        val PRIMERA_VEZ = stringPreferencesKey("primera_vez")
     }
 
     //#region Métodos para guardar y leer datos de usuario
 
     // Guardar datos de usuario en DataStore
-    suspend fun guardarUsuario(nombre: String, fechaNacimiento: Date) {
+    private suspend fun guardarUsuario(nombre: String, fechaNacimiento: Date) {
         try {
             // Se editan las preferencias del usuario de las claves NOMBRE_USUARIO y FECHA_NACIMIENTO
             context.dataStore.edit { preferences ->
@@ -56,9 +57,9 @@ class Preferencias (private val context: Context) {
     }
 
     // Leer nombre de usuario desde DataStore como un flujo de datos Flow<String>
-    fun obtenerNombreUsuario(): Flow<String> = context.dataStore.data
-        .map {
-            preferences -> preferences[NOMBRE_USUARIO] ?: ""
+    private fun obtenerNombreUsuario(): Flow<String> = context.dataStore.data
+        .map { preferences ->
+            preferences[NOMBRE_USUARIO] ?: ""
         }
 
     // Leer nombre de usuario desde Java como un String
@@ -70,16 +71,16 @@ class Preferencias (private val context: Context) {
     }
 
     // Leer fecha de nacimiento desde DataStore como un flujo de datos Flow<Date>
-    fun obtenerFechaNacimiento(): Flow<Date> = context.dataStore.data
-        .map {
-            preferences ->
-                val fechaNacimientoTexto = preferences[FECHA_NACIMIENTO]
-                if (fechaNacimientoTexto != null) {
-                    return@map SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(fechaNacimientoTexto)
-                }
-                else {
-                    return@map SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse("01/01/1900")
-                }
+    private fun obtenerFechaNacimiento(): Flow<Date> = context.dataStore.data
+        .map { preferences ->
+            val fechaNacimientoTexto = preferences[FECHA_NACIMIENTO]
+            if (fechaNacimientoTexto != null) {
+                return@map SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(
+                    fechaNacimientoTexto
+                )
+            } else {
+                return@map SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse("01/01/1900")
+            }
         }
 
     // Leer fecha de nacimiento desde Java como un Date
@@ -90,7 +91,7 @@ class Preferencias (private val context: Context) {
     }
 
     // Guardar nombre de usuario en DataStore
-    suspend fun guardarNombreUsuario(nombre: String) {
+    private suspend fun guardarNombreUsuario(nombre: String) {
         context.dataStore.edit { preferences ->
             preferences[NOMBRE_USUARIO] = nombre
         }
@@ -107,7 +108,8 @@ class Preferencias (private val context: Context) {
     // Guardar fecha de nacimiento en DataStore
     private suspend fun guardarFechaNacimiento(fechaNacimiento: Date) {
         // Formatear fechaNacimiento en texto de formato "dd/MM/yyyy"
-        val fechaNacimientoTexto = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(fechaNacimiento)
+        val fechaNacimientoTexto =
+            SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(fechaNacimiento)
         context.dataStore.edit { preferences ->
             preferences[FECHA_NACIMIENTO] = fechaNacimientoTexto
         }
@@ -141,8 +143,8 @@ class Preferencias (private val context: Context) {
 
     // Leer preferencia de modo oscuro como un flujo de datos Flow<Boolean>
     private fun obtenerModoOscuro(): Flow<Boolean> = context.dataStore.data
-        .map {
-            preferences -> preferences[MODO_OSCURO]?.toBoolean() ?: false
+        .map { preferences ->
+            preferences[MODO_OSCURO]?.toBoolean() ?: false
         }
 
     // Leer preferencia de modo oscuro desde Java como un Boolean
@@ -169,8 +171,8 @@ class Preferencias (private val context: Context) {
 
     // Leer preferencia de modo de alto contraste como un flujo de datos Flow<Boolean>
     private fun obtenerAltoContraste(): Flow<Boolean> = context.dataStore.data
-        .map {
-                preferences -> preferences[MODO_OSCURO]?.toBoolean() ?: false
+        .map { preferences ->
+            preferences[MODO_OSCURO]?.toBoolean() ?: false
         }
 
     // Leer preferencia de modo alto contraste desde Java como un Boolean
@@ -197,8 +199,8 @@ class Preferencias (private val context: Context) {
 
     // Leer tamaño de fuente como un flujo de datos Flow<Int>
     private fun obtenerTamanoFuente(): Flow<Int> = context.dataStore.data
-        .map {
-            preferences -> preferences[TAMANO_FUENTE]?.toInt() ?: 14
+        .map { preferences ->
+            preferences[TAMANO_FUENTE]?.toInt() ?: 14
         }
 
     // Leer tamaño de fuente desde Java como un Int
@@ -207,4 +209,36 @@ class Preferencias (private val context: Context) {
             obtenerTamanoFuente().first()
         }
     }
+
+    //#endregion
+
+    //#region Métodos para guardar y leer la informacion de la primera vez que se abre la app
+    // Guardar informacion de la primera vez que se abre la app
+    private suspend fun guardarPrimeraVez(primeraVez: Boolean) {
+        context.dataStore.edit { preferences ->
+            preferences[PRIMERA_VEZ] = primeraVez.toString()
+        }
+    }
+
+    // Guardar informacion de la primera vez
+    fun guardarPrimeraVezDesdeJava(primeraVez: Boolean) {
+        // Llamar a la función de corrutina
+        CoroutineScope(Dispatchers.IO).launch {
+            guardarPrimeraVez(primeraVez)
+        }
+    }
+
+    // Leer informacion de la primera vez que se abre la app
+    private fun obtenerPrimeraVez(): Flow<Boolean> = context.dataStore.data
+        .map { preferences ->
+            preferences[PRIMERA_VEZ]?.toBoolean() ?: true
+        }
+
+    // Leer informacion de la primera vez desde Java
+    fun obtenerPrimeraVezDesdeJava(): Boolean {
+        return runBlocking(Dispatchers.IO) {
+            obtenerPrimeraVez().first()
+        }
+    }
+    //#endregion
 }

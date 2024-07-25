@@ -4,5 +4,11 @@
     <string name="title_recordatorios">Recordatorio</string>
     <string name="title_recompensas">Recompensas</string>
     <string name="title_rutina">Rutina</string>
+    <string name="adjust_font_size">Tamaño de letra\n</string>
+    <string name="contrast_mode">Modo conteastse\n</string>
+    <string name="dark_mode">Modo oscuro\n</string>
+    <string name="accessibility_options">Opciones de accesivilidad\n</string>
+    <string name="title_configuracion">Configuracion</string>
+    <string name="title_settings">Configutación\n</string>
 
 </resources>

@@ -10,9 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.recuerdame.databinding.FragmentNotificationsBinding;
 import com.example.recuerdame.databinding.FragmentRutinaBinding;
-import com.example.recuerdame.ui.notifications.NotificationsViewModel;
 
 public class RutinaFragment extends Fragment {
 

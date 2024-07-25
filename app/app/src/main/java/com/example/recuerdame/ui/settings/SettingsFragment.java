@@ -56,6 +56,7 @@ public class SettingsFragment extends Fragment {
         cargarConfiguracion();
         switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) ->{
             Toast.makeText(getContext(), "Modo oscuro en proximas versiones", Toast.LENGTH_SHORT).show();
+
           /*
             if(isChecked){
               AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);

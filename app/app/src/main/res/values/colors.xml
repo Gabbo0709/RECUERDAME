@@ -8,4 +8,44 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color>
+    <color name="celeste">#defeeb</color>
+    <color name = "celeste2">#d6fbfe</color>
+    <color name="Gris">#f0f0f0</color>
+    <color name="Gris2">#d2d2d2</color>
+    <color name="Derivado1">#ddfcff</color>
+    <color name="Derivado2">#eefef4</color>
+    <color name="Secundario1">#daelff</color>
+    <color name="Secundario2">#ffe7de</color>
+    <color name="Secundario3">#ffebfc</color>
+    <color name="Secundario4">#ecffed</color>
+    <color name="Secundario5">#ffffdc</color>
+    <color name="Secundario6">#e7ebfb</color>
+    <color name="Secundario7">#fff3ef</color>
+    <color name="Secundario8">#fff5fe</color>
+    <color name="Secundario9">#f2fff2</color>
+    <color name="Secundario10">#ffffl</color>
+    <color name="Secundario11">#c1fece</color>
+
+    <color name="DarkGray1">#2b2d31</color>
+    <color name="DarkGray2">#313338</color>
+    <color name="DarkGray3">#838791</color>
+    <color name="LightBlue1">#8cdcc8</color>
+    <color name="LightBlue2">#e1fdee</color>
+    <color name="Gray1">#b5c9c3</color>
+    <color name="Gray2">#c9dbd6</color>
+
+
+    <color name="Blue1">#3997c2</color>
+    <color name="Teal1">#4ddcba</color>
+    <color name="Yellow1">#fdc600</color>
+    <color name="Red1">#fc7575</color>
+    <color name="Orange1">#fd6500</color>
+    <color name="Blue2">#4da1c8</color>
+    <color name="Teal2">#71e3c8</color>
+    <color name="Yellow2">#fdd134</color>
+    <color name="Red2">#fc8383</color>
+    <color name="Orange2">#fe934d</color>
+
+
+
 </resources>

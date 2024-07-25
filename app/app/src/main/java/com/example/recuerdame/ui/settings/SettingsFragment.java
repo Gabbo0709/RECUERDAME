@@ -1,9 +1,8 @@
 package com.example.recuerdame.ui.settings;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,19 +11,27 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import com.example.recuerdame.R;
+import com.example.recuerdame.dao.DatosUsuario;
+import com.example.recuerdame.modelos.Usuario;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class SettingsFragment extends Fragment {
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch switchDarkMode;
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch switchContrastMode;
     private Button buttonAdjustFontSize;
     private EditText edittextChangeName;
     private EditText edittextChangeDate;
+    private Button buttonSavedChanges;
 
+    private DatosUsuario datosUsuario;
+    private Usuario usuario;
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_settings, container, false);
@@ -35,28 +42,56 @@ public class SettingsFragment extends Fragment {
         buttonAdjustFontSize = root.findViewById(R.id.buttonAdjustFontSize);
         edittextChangeName = root.findViewById(R.id.edittextChangeName);
         edittextChangeDate = root.findViewById(R.id.edittextChangeDate);
+        buttonSavedChanges = root.findViewById(R.id.buttonSavedChanges);
+
+        datosUsuario = new DatosUsuario(getContext());
+        usuario = datosUsuario.leerUsuario();
+
+        cargarConfiguracion();
 
         // Asignar listeners a los elementos
-        switchDarkMode.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Modo oscuro activado/desactivado", Toast.LENGTH_SHORT).show()
-        );
+        switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-        switchContrastMode.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Modo alto contraste activado/desactivado", Toast.LENGTH_SHORT).show()
-        );
+        });
+
+        switchContrastMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+
+        });
 
         buttonAdjustFontSize.setOnClickListener(v ->
                 Toast.makeText(getContext(), "Ajustar tamaño de letra", Toast.LENGTH_SHORT).show()
         );
 
-        edittextChangeName.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Cambiar Nombre de Usuario", Toast.LENGTH_SHORT).show()
-        );
-
-        edittextChangeDate.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Cambiar Fecha de Nacimiento", Toast.LENGTH_SHORT).show()
-        );
+        buttonSavedChanges.setOnClickListener(v -> guardarCambios());
 
         return root;
+    }
+
+    private void cargarConfiguracion() {
+        switchDarkMode.setChecked(datosUsuario.obtenerModoOscuro());
+        switchContrastMode.setChecked(datosUsuario.obtenerAltoContraste());
+        edittextChangeName.setText(usuario.getNombre());
+        edittextChangeDate.setText(new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(usuario.getFechaNacimiento()));
+    }
+
+    private void guardarCambios() {
+        String nuevoNombre = edittextChangeName.getText().toString();
+        String nuevaFechaStr = edittextChangeDate.getText().toString();
+
+        usuario.setNombre(nuevoNombre);
+        Toast.makeText(getContext(), "Cambios guardados"+usuario.getNombre(), Toast.LENGTH_SHORT).show();
+
+        try {
+            Date nuevaFecha = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(nuevaFechaStr);
+            if (nuevaFecha != null) {
+                usuario.setFechaNacimiento(nuevaFecha);
+                datosUsuario.guardarUsuario(usuario);
+                Toast.makeText(getContext(), "Cambios guardados"+usuario.getFechaNacimiento(), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Fecha de nacimiento no válida", Toast.LENGTH_SHORT).show();
+            }
+        } catch (ParseException e) {
+            Toast.makeText(getContext(), "Formato de fecha no válido. Use dd/MM/yyyy", Toast.LENGTH_SHORT).show();
+        }
     }
 }

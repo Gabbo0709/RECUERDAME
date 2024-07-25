@@ -6,63 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.settings.SettingsFragment">
 
-    <Switch
-        android:id="@+id/switchDarkMode"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Modo oscuro"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_margin="16dp" />
-
-    <Switch
-        android:id="@+id/switchContrastMode"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Modo alto contraste"
-        app:layout_constraintTop_toBottomOf="@+id/switchDarkMode"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_margin="16dp" />
-
-    <Button
-        android:id="@+id/buttonAdjustFontSize"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Ajustar tamaño de letra"
-        app:layout_constraintTop_toBottomOf="@+id/switchContrastMode"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_margin="16dp" />
-
-    <EditText
-        android:id="@+id/edittextChangeDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Cambiar Fecha Nacimiento"
-        android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdjustFontSize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_margin="16dp" />
-
-    <EditText
-        android:id="@+id/edittextChangeName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Cambiar Nombre de Usuario"
-        android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/edittextChangeDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_margin="16dp" />
-
+    <!-- TextView for the title -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
@@ -71,10 +15,83 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/switchDarkMode"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Switch for Dark Mode -->
+    <Switch
+        android:id="@+id/switchDarkMode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Modo oscuro"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="16dp" />
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Switch for Contrast Mode -->
+    <Switch
+        android:id="@+id/switchContrastMode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Modo alto contraste"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/switchDarkMode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Button to Adjust Font Size -->
+    <Button
+        android:id="@+id/buttonAdjustFontSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ajustar tamaño de letra"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/switchContrastMode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- EditText to Change Date of Birth -->
+    <EditText
+        android:id="@+id/edittextChangeDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cambiar Fecha Nacimiento"
+        android:inputType="date"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdjustFontSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- EditText to Change Username -->
+    <EditText
+        android:id="@+id/edittextChangeName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cambiar Nombre de Usuario"
+        android:inputType="textPersonName"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/edittextChangeDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Button to Save Changes -->
+    <Button
+        android:id="@+id/buttonSavedChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar cambios"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/edittextChangeName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
